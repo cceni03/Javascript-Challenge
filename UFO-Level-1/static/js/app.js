@@ -1,6 +1,11 @@
 // from data.js
 var tableData = data;
-console.log(tableData);
+
+// Filter Data
+var filterCity = 'Pittsburgh';
+var filterCountry = 'US',
+var filterShape = 'Rectangle'
+var filterState = 'Pennsylvania';
 
 // Reference Table Body
 var tbody = d3.select("tbody");
