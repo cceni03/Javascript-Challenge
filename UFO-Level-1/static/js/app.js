@@ -19,14 +19,36 @@ tableData.foreach(function(ufoSighting) {
 // Select Button
 var button = d3.select("filter-btn");
 button.on("click", function() {
+
+    tbody.html("");
+
     // Select Input Date
-    var inputDate = d3.select("#datetime");
-    inputDate.on("change", handleClick);
+    var inputElement = d3.select("#datetime");
 
+    // Determine Value of Properties
+    var inputValue = inputElement.property("value");
 
+    // Input Value
+    console.log(inputValue);
 
+    // Filter Table Data
+    var filterData = tableData.filter(sighting => sighting.datetime === inputValue);
 
-})
+    // Filter Table Values
+    console.log(filteredData);
+
+    filteredData.forEach(function(selections) {
+
+        console.log(selections);
+        // Append Table
+        var row = tbody.append("tr");
+        Object.entries(selections).forEach(function([key, value]) {
+            console.log(key, value);
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
+});
 
 
 
