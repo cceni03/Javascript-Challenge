@@ -23,15 +23,40 @@ function loadTable(table){
     });
 }
 
+// Select Button
+var button = d3.select("#filter-btn");
+button.on("click", function() { 
 
+    tbody.html("");
 
+    // Select Input Date
+    var inputElement = d3.select ("#datetime");
 
+    // Determine Property of Date, State & Shape
+    var inputValue = inputElement.property("value");
 
+     // Print the value to the console
+    console.log(inputValue);
 
+    // Filter Data
+    var filteredData = tableData.filter(sighting => sighting.datetime === inputeValue);
 
+    // Filter Values
+    console.log(filteredData);
 
+    filtereredData.forEach(function(selections) {
+    
+    console.log(selections);
 
+    // Append Table Rows
+    var row = tbody.append("tr");
+    Object.entries(selections).forEach(function([key, value]) {
+        console.log(key,value);
+        var cell = row.append("td");
+        cell.text(value);
+    });
 
-
-
+});
+})
+ 
 
