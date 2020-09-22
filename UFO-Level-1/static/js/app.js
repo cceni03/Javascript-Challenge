@@ -3,8 +3,9 @@ var tableData = data;
 
 // Filter Data
 var filterCity = 'port saint lucie';
-var filterCountry = 'us',
-var filterShape = 'fireball'
+var filterCountry = 'us';
+var filterDate = '1/8/2010';
+var filterShape = 'fireball';
 var filterState = 'fl';
 
 // Reference Table Body
@@ -15,7 +16,7 @@ loadTable(tableData);
 
 function loadTable(table){
     table.forEach((ufoSightings) => {
-        var row = tBody.append ("tr");
+        var row = tbody.append ("tr");
         Object.entries(ufoSightings).forEach(([key, value]) => {
             var cell = row.append("td");
             cell.text(value);
@@ -30,7 +31,7 @@ button.on("click", function() {
     tbody.html("");
 
     // Select Input Date
-    var inputElement = d3.select ("#datetime");
+    var inputElement = d3.select("#datetime");
 
     // Determine Property of Date, State & Shape
     var inputValue = inputElement.property("value");
@@ -39,12 +40,12 @@ button.on("click", function() {
     console.log(inputValue);
 
     // Filter Data
-    var filteredData = tableData.filter(sighting => sighting.datetime === inputeValue);
+    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
 
     // Filter Values
     console.log(filteredData);
 
-    filtereredData.forEach(function(selections) {
+    filteredData.forEach(function(selections) {
     
     console.log(selections);
 
@@ -59,4 +60,8 @@ button.on("click", function() {
 });
 })
  
+
+
+
+
 
