@@ -2,10 +2,10 @@
 var tableData = data;
 
 // Filter Data
-var filterCity = 'Pittsburgh';
-var filterCountry = 'US',
-var filterShape = 'Rectangle'
-var filterState = 'Pennsylvania';
+var filterCity = 'port saint lucie';
+var filterCountry = 'us',
+var filterShape = 'fireball'
+var filterState = 'fl';
 
 // Reference Table Body
 var tbody = d3.select("tbody");
@@ -22,8 +22,6 @@ function loadTable(table){
         });
     });
 }
-
-
 
 
 
